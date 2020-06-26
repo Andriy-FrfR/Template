@@ -2,13 +2,7 @@
 *:before,
 *:after {
     box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-}
-
-h1, h2, h3, h4, h5, h6{
+    padding: 0;
     margin: 0;
 }
 
@@ -71,7 +65,6 @@ h1, h2, h3, h4, h5, h6{
     font-family: "Avenir";
     font-size: 44px;
     font-weight: 800;
-    line-height: 28px;
 }
 
 .section-text {
@@ -108,4 +101,136 @@ h1, h2, h3, h4, h5, h6{
     background-color: #0ebfdd;
     padding: 60px 0 65px;
     margin: 60px 0 0;
+}
+
+.team-inner {
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    margin: 105px auto 105px;
+}
+
+.team-item {
+    text-align: center;
+}
+
+.team-item-img img {
+    display: inline-block;
+    max-width: 100%;
+}
+
+.team-item-title {
+    color: #f7fdfe;
+    font-family: "Avenir";
+    font-family: "Avenir";
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.team-item-text {
+    color: #f7fdfe;
+    font-family: "Avenir";
+    font-style: oblique;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.team-btn {
+    display: block;
+    background-color: #0ebfdd;
+    border-radius: 50px;
+    border: 1px solid #f9fbfb;
+    padding: 15px 35px;
+    color: #f7fdfe;
+    font-family: "Museo Sans";
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: all .2s linear;
+}
+
+.team-btn:hover {
+    background-color: #fff;
+    color: #0ebfdd;
+}
+
+/*Map*/
+iframe {
+    display: block;
+}
+
+/*Footer*/
+.footer {
+    background-color: #45494d;
+}
+
+.footer-inner {
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-about {
+    width: 225px;
+    display: flex;
+    justify-content: space-between;
+    margin: 35px 0;
+}
+
+.footer-about-item {
+    color: #d7dee4;
+    font-family: "Museo Sans";
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+}
+
+.footer-social {
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.footer-social-item {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #d7dee4;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.footer-social-item img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3D(-50%, -50%, 0);
+}
+
+/*Footer Copyright*/
+.footer-copyright {
+    text-align: right;
+    border-top: 1px solid #73767a;
+    padding: 15px 0;
+    color: #73767a;
+    font-family: "Museo Sans";
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.3px;
+}
+
+.copyright-divider {
+    color: #73767a;
+    margin: 0 15px;
 }

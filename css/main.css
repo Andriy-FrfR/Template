@@ -13,11 +13,12 @@
 
 .header-inner {
     width: 100%;
-    max-width: 940px;
-    margin: 0 auto;
+    max-width: 970px;
     display: flex;
     justify-content: space-between;
-    padding: 30px 0;
+    position: relative;
+    padding: 30px 15px;
+    margin: 0 auto;
 }
 
 .header-logo {
@@ -30,8 +31,20 @@
     margin: auto 0;
 }
 
+.header.fixed {
+    width: 100%;
+    position: fixed;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header.fixed .header-inner {
+    padding: 20px 10px;
+}
+
 /*Nav*/
 .nav-item {
+    width: 124px;
+    height: 40px;
     display: inline-block;
     border-radius: 30px;
     text-transform: uppercase;
@@ -41,9 +54,10 @@
     font-weight: 400;
     text-transform: uppercase;
     text-decoration: none;
+    text-align: center;
+    line-height: 40px;
     letter-spacing: 0.35px;
     margin: 0 0 0 25px;
-    padding: 16px 38px 14px 36px;
     transition: all .2s linear;
 }
 
@@ -53,11 +67,81 @@
     color: #fff;
 }
 
+/*Burger-Menu*/
+.burger-menu {
+    display: none;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    padding: 10px 0;
+}
+
+.burger-menu-item {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #82868f;
+    font-size: 0;
+    color: transparent;
+    margin: auto;
+}
+
+.burger-menu-item::before,
+.burger-menu-item::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #82868f;
+    transition: transform .1s linear;
+}
+
+.burger-menu-item::before {
+    top: -8px;
+}
+
+.burger-menu-item::after {
+    top: 8px;
+}
+
+.burger-menu.active .burger-menu-item {
+    background: 0;
+}
+
+.burger-menu.active .burger-menu-item::before {
+    transform-origin: left top;
+    transform: rotate(45deg)
+    translateX(-3px);
+}
+
+.burger-menu.active .burger-menu-item::after {
+    transform-origin: left bottom;
+    transform: rotate(-45deg)
+    translateX(-3px);
+}
+
+.burger-menu.active .nav {
+    display: block;
+}
+
+.burger-menu.active .nav-item {
+    width: 100%;
+}
+
 /*Section*/
 .section-header {
     text-align: center;
-    max-width: 804px;
+    max-width: 835px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .section-title {
@@ -72,7 +156,6 @@
     font-family: "Avenir";
     font-size: 20px;
     font-weight: 500;
-    line-height: 28px;
     margin: 32px 0 0 0;
 }
 
@@ -104,10 +187,12 @@
 }
 
 .team-inner {
-    max-width: 600px;
+    max-width: 630px;
     display: flex;
     justify-content: space-between;
-    margin: 105px auto 105px;
+    flex-wrap: wrap;
+    margin: 105px auto;
+    padding: 0 20px;
 }
 
 .team-item {
@@ -121,7 +206,6 @@
 
 .team-item-title {
     color: #f7fdfe;
-    font-family: "Avenir";
     font-family: "Avenir";
     font-size: 18px;
     font-weight: 800;
@@ -168,13 +252,15 @@ iframe {
 }
 
 .footer-inner {
-    max-width: 940px;
+    max-width: 970px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .footer-links {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer-about {
@@ -234,3 +320,134 @@ iframe {
     color: #73767a;
     margin: 0 15px;
 }
+
+/*Media*/
+
+@media (max-width: 992px) {
+    /*Header*/
+    .header-inner {
+        padding: 20px 10px;
+    }
+
+    /*Nav*/
+    .nav-item {
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    /*Header*/
+    .header-inner {
+        padding: 15px;
+    }
+
+    /*Nav*/
+    .nav {
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        background-color: #f7fdfe;
+    }
+
+    .nav-item {
+        display: block;
+        margin: 0 auto 10px;
+    }
+
+    /*Burger-Menu*/
+    .burger-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 550px) {
+    /*Section*/
+    .section-title {
+        font-size: 38px;
+    }
+    
+    .team .section-title {
+        font-size: 44px;
+    }
+
+    .section-text {
+        font-size: 18px;
+        margin: 15px 0 0 0;
+    }
+
+    /*About*/
+    .about {
+        margin: 40px 0 0 0;
+    }
+
+    /*Team*/
+    .team-inner {
+        margin: 40px auto 40px;
+    }
+
+    .team-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /*Footer*/
+    .footer-about {
+        width: 210px;
+    }
+
+    /*Footer Copyright*/
+    .footer-copyright {
+        text-align: center;
+    }
+
+    .copyright-divider {
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team {
+        padding: 40px 0 55px;
+    }
+
+    .section-title {
+        font-size: 35px;
+    }
+
+    .team .section-title {
+        font-size: 44px;
+    }
+
+    .section-text {
+        margin: 10px 0 0 0;
+    }
+
+    /*About*/
+    .about {
+        margin: 30px 0 0 0;
+    }
+
+    /*Footer*/
+    .footer-about {
+        width: 100%;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .footer-social {
+        width: 100%;
+        justify-content: center;
+        margin: 0 0 15px;
+    }
+
+    .footer-about-item {
+        margin-right: 10px;
+    }
+
+    .footer-social-item {
+        margin-right: 10px;
+    }
+}
+
